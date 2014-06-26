@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" ng-app="todoApp">
+    
+    <head>
+        <meta charset="utf-8">
+        <title>ToDo</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/app.css" />
+    </head>
+    
+    <body ng-controller="ToDoCtrl">
+        <div class="container" align="center" style="width:900px">
+             <h1>Todos</h1>    
+            <div class="panel">
+                <div class="input-group">
+                    <input class="form-control" ng-model="actionText" /> <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="addNewItem(actionText)" ng-disabled="!actionText">Add</button>
+                </span>
+
+                </div>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Done</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="todo in todos.items | orderBy: 'action'">
+                            <td>{{todo.action}}</td>
+                            <td>
+                                <input type="checkbox" ng-model="todo.done" />
+                            </td>
+                            <td>
+                                <button class="btn btn-danger" ng-click="deleteToDo(todo.id)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <script src="lib/jquery.min.js"></script>
+            <script src="lib/bootstrap.min.js"></script>
+            <script src="lib/angular/angular.min.js"></script>
+            <script src="js/app.js"></script>
+            <script src="js/controllers/ToDoCtrl.js"></script>
+            <script src="js/services/ParseLib.js"></script>
+            <script src="js/services/ParseService.js"></script>
+        
+        </div>
+    </body>
+
+</html>

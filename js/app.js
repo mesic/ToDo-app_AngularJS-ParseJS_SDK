@@ -4,5 +4,5 @@
 var todoApp = angular.module('todoApp', []);
 
 //Constants
-todoApp.value('ParseAppId', '2IZdd0b1siNLvmrUQDK2tScUG7Dt0JEoSLXZeBD1');
-todoApp.value('ParseJSId', 'Kylr1rzRZBqiSX5a2eC2vVb8fG2S00JTZxVUbbkl');
+todoApp.value('ParseAppId', '<ID here>');
+todoApp.value('ParseJSId', '<ID here>');
